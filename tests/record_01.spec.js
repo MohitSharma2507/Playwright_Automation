@@ -6,7 +6,10 @@ test('test', async ({ page }) => {
   await page.locator('[data-test="login-credentials"]').click({
     clickCount: 3
   });
-
+  await page.locator('body').press('ControlOrMeta+c');
+  await page.locator('[data-test="username"]').click({
+    modifiers: ['ControlOrMeta']
+  });
   await page.locator('[data-test="username"]').dblclick();
   await page.locator('[data-test="username"]').fill('standard_user');
   await page.locator('[data-test="password"]').click();
@@ -15,5 +18,4 @@ test('test', async ({ page }) => {
   await page.locator('[data-test="login-button"]').click();
   await page.getByRole('button', { name: 'Open Menu' }).click();
   await page.locator('[data-test="logout-sidebar-link"]').click();
-  
 });
