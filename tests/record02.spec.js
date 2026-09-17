@@ -5,6 +5,7 @@ test('Test',async () => {
   const browser = await chromium.launch({
     headless: false
   });
+
   const context = await browser.newContext();
   const page = await context.newPage();
   await page.goto('https://www.google.com/search?q=saucedemo&oq=saucedemo&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDI3MTRqMGoyqAIAsAIB&sourceid=chrome&ie=UTF-8');
@@ -14,7 +15,6 @@ test('Test',async () => {
   await page.locator('iframe[name="c-zak2bv9vd5if"]').contentFrame().locator('[id="0"]').click();
   await page.locator('iframe[name="c-zak2bv9vd5if"]').contentFrame().locator('[id="8"]').click();
 
-  // ---------------------
   await context.close();
   await browser.close();
 });
