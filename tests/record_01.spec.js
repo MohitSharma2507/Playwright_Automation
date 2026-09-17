@@ -7,7 +7,7 @@ test('test', async ({ page }) => {
     clickCount: 3
   });
   await page.locator('body').press('ControlOrMeta+c');
-  await page.locator('[data-test="username"]1243').click({
+  await page.locator('[data-test="username"]').click({
     modifiers: ['ControlOrMeta']
   });
   await page.locator('[data-test="username"]').dblclick();

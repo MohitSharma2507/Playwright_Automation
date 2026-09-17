@@ -8,7 +8,6 @@ test('test', async ({ page }) => {
   await page.locator('.mat-mdc-form-field.w-full.mat-mdc-form-field-type-mat-input.mat-form-field-appearance-outline.mat-primary.ng-untouched.ng-pristine > .mat-mdc-text-field-wrapper > .mat-mdc-form-field-flex > .mat-mdc-form-field-infix').click();
   await page.getByRole('textbox', { name: 'Password' }).fill('admin');
   await page.getByRole('button', { name: 'Login' }).click();
-  await page.goto('https://admin.globaltechanalytics.in/dashboard');
   await page.getByText('menu').click();
   await page.getByRole('link', { name: 'Task Management' }).click();
   await page.locator('.overlay').click();
